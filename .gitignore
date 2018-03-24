@@ -1,2 +1,3 @@
-.env
+bikes-app/.env
+bookings-app/.env
 bikes-app/node_modules
