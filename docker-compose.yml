@@ -1,20 +1,22 @@
 version: '3'
 
 services:
-  bikes-app:
+  bikesapp:
     image: nbondarenko/bikes-app:latest
-    container_name: bikes-app
+    container_name: bikesapp
     restart: always
     ports:
       - 5000:5000
     depends_on:
       - mongo
+      - bookingapp
     links:
       - mongo
+      - bookingapp
 
-  booking-app:
+  bookingapp:
     image: nbondarenko/bookings-app:latest
-    container_name: bookings-app
+    container_name: bookingapp
     restart: always
     ports:
       - 3000:5001
@@ -22,6 +24,7 @@ services:
       - mongo
     links:
       - mongo
+
 
   mongo:
     image: mongo:latest
