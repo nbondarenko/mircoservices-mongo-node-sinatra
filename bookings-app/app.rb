@@ -29,8 +29,7 @@ get '/' do
 end
 
 get '/bookings' do
-  @bookings = Booking.all
-  @bookings.to_json 
+   'hi'
 end
 
 post '/bookings' do
